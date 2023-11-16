@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>test again.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+test again.py</font>
+</center></td></tr></table>
+<pre><span class="s0">print(</span><span class="s1">&quot;BuildaKey: Your blueprint to your customized keyboard&quot;</span><span class="s0">)</span>
+<span class="s0">print(</span><span class="s1">&quot;-----------------------------------------------------&quot;</span><span class="s0">)</span>
+
+<span class="s0">print(</span><span class="s1">&quot;</span><span class="s2">\n</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+<span class="s2">while True</span><span class="s0">:</span>
+    <span class="s0">keyboard_layouts = {</span>
+        <span class="s1">&quot;100%&quot;</span><span class="s0">: {</span><span class="s1">&quot;models&quot;</span><span class="s0">: [</span><span class="s1">&quot;Royal Kludge RK 100&quot;</span><span class="s2">, </span><span class="s1">&quot;Glorious GMMK 100%&quot;</span><span class="s2">, </span><span class="s1">&quot;AJAZZ AK992 RGB&quot;</span><span class="s0">]</span><span class="s2">, </span><span class="s1">&quot;switches&quot;</span><span class="s0">: </span><span class="s3">100</span><span class="s0">}</span><span class="s2">, </span><span class="s4">#RK100 ₱2,860.00 / Glorious GMMK 100% ₱6,590.00 / AJAZZ AK992 RGB ₱2,827.00</span>
+        <span class="s1">&quot;TKL&quot;</span><span class="s0">: {</span><span class="s1">&quot;models&quot;</span><span class="s0">: [</span><span class="s1">&quot;AJAZZ K870T PRO&quot;</span><span class="s2">, </span><span class="s1">&quot;Tecware Phantom+&quot;</span><span class="s2">, </span><span class="s1">&quot;Rakk Lam-ang pro&quot;</span><span class="s0">]</span><span class="s2">, </span><span class="s1">&quot;switches&quot;</span><span class="s0">: </span><span class="s3">87</span><span class="s0">}</span><span class="s2">, </span><span class="s4">#AJAZZ K870T PRO ₱2,519.99 / Tecware Phantom+ ₱2,365.00 / Rakk Lam-ang pro ₱1,559.00</span>
+        <span class="s1">&quot;60%&quot;</span><span class="s0">: {</span><span class="s1">&quot;models&quot;</span><span class="s0">: [</span><span class="s1">&quot;Womier WK61&quot;</span><span class="s2">, </span><span class="s1">&quot;Leaven K620&quot;</span><span class="s2">, </span><span class="s1">&quot;Redragon Fizz&quot;</span><span class="s0">]</span><span class="s2">, </span><span class="s1">&quot;switches&quot;</span><span class="s0">: </span><span class="s3">61</span><span class="s0">} </span><span class="s4">#Womier WK61 ₱3,742.00 / Leaven K620 ₱620.00 / Redragon Fizz ₱1,395.00</span>
+    <span class="s0">}</span>
+    <span class="s0">print(</span><span class="s1">&quot;PLEASE CHOOSE YOUR KEYBOARD LAYOUT HERE:(100%/ TKL / 60%)&quot;</span><span class="s0">)</span>
+    <span class="s0">user_input = input(</span><span class="s1">&quot;PICK YOUR KEYBOARD LAYOUT: &quot;</span><span class="s0">).upper()</span>
+    <span class="s0">print(</span><span class="s1">&quot;-----------------------------------------------------&quot;</span><span class="s0">)</span>
+    <span class="s0">print(</span><span class="s1">&quot;</span><span class="s2">\n</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+
+    <span class="s2">if </span><span class="s0">user_input </span><span class="s2">in </span><span class="s0">keyboard_layouts:</span>
+        <span class="s0">print(</span><span class="s1">f&quot;Here are some </span><span class="s2">{</span><span class="s0">user_input</span><span class="s2">} </span><span class="s1">keyboards. Please choose a number:&quot;</span><span class="s0">)</span>
+        <span class="s2">for </span><span class="s0">idx</span><span class="s2">, </span><span class="s0">keyboard_model </span><span class="s2">in </span><span class="s0">enumerate(keyboard_layouts[user_input][</span><span class="s1">&quot;models&quot;</span><span class="s0">]</span><span class="s2">, </span><span class="s0">start=</span><span class="s3">1</span><span class="s0">):</span>
+            <span class="s0">print(</span><span class="s1">f&quot;</span><span class="s2">{</span><span class="s0">idx</span><span class="s2">}</span><span class="s1">. </span><span class="s2">{</span><span class="s0">keyboard_model</span><span class="s2">}</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+        <span class="s0">model_choice = input(</span><span class="s1">&quot;Enter the number of your chosen keyboard model: &quot;</span><span class="s0">)</span>
+        <span class="s2">try</span><span class="s0">:</span>
+            <span class="s0">model_choice = int(model_choice)</span>
+            <span class="s2">if </span><span class="s3">1 </span><span class="s0">&lt;= model_choice &lt;= len(keyboard_layouts[user_input][</span><span class="s1">&quot;models&quot;</span><span class="s0">]):</span>
+                <span class="s0">selected_model = keyboard_layouts[user_input][</span><span class="s1">&quot;models&quot;</span><span class="s0">][model_choice - </span><span class="s3">1</span><span class="s0">]</span>
+                <span class="s0">print(</span><span class="s1">f&quot;You've selected </span><span class="s2">{</span><span class="s0">selected_model</span><span class="s2">}</span><span class="s1">.&quot;</span><span class="s0">)</span>
+                <span class="s0">print(</span><span class="s1">&quot;-----------------------------------------------------&quot;</span><span class="s0">)</span>
+                <span class="s0">switch_type = input(</span><span class="s1">&quot;Now choose your switch (Linear, Tactile, Clicky): &quot;</span><span class="s0">).capitalize()</span>
+                <span class="s2">if </span><span class="s0">switch_type </span><span class="s2">in </span><span class="s0">[</span><span class="s1">&quot;Linear&quot;</span><span class="s2">, </span><span class="s1">&quot;Tactile&quot;</span><span class="s2">, </span><span class="s1">&quot;Clicky&quot;</span><span class="s0">]:</span>
+                    <span class="s0">selected_switches = keyboard_layouts[user_input][</span><span class="s1">&quot;switches&quot;</span><span class="s0">]</span>
+                    <span class="s0">print(</span><span class="s1">f&quot;You've chosen </span><span class="s2">{</span><span class="s0">switch_type</span><span class="s2">} </span><span class="s1">switches. Now, the switches are set to </span><span class="s2">{</span><span class="s0">selected_switches</span><span class="s2">}</span><span class="s1">.&quot;</span><span class="s0">)</span>
+                <span class="s2">else</span><span class="s0">:</span>
+                    <span class="s0">print(</span><span class="s1">&quot;Invalid switch type. Please choose from Linear, Tactile, or Clicky.&quot;</span><span class="s0">)</span>
+            <span class="s2">else</span><span class="s0">:</span>
+                <span class="s0">print(</span><span class="s1">&quot;Invalid model choice. Please select a number within the range.&quot;</span><span class="s0">)</span>
+        <span class="s2">except </span><span class="s0">ValueError:</span>
+            <span class="s0">print(</span><span class="s1">&quot;Invalid input. Please enter a number.&quot;</span><span class="s0">)</span>
+    <span class="s2">else</span><span class="s0">:</span>
+        <span class="s0">print(</span><span class="s1">&quot;INVALID KEYBOARD LAYOUT. PLEASE CHOOSE FROM THE MENU&quot;</span><span class="s0">)</span>
+        <span class="s0">print(</span><span class="s1">&quot;</span><span class="s2">\n</span><span class="s1">&quot;</span><span class="s0">)</span>
+
+        <span class="s4">#switches for linears is 1.Gateron Yellows 2.Cherry MX Reds 3.Akko CS switch Jelly Whites</span>
+        <span class="s4">#switches for Tactile is 1.Boba U4T 2.Glorious Holy Panda Switches 3.Akko V3 Pro Cream Blue</span></pre>
+</body>
+</html>
